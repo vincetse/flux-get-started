@@ -2,13 +2,13 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: mongodb
+  name: postgresql
   namespace: demo
   annotations:
     flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: semver:~4.0
 spec:
-  releaseName: mongodb
+  releaseName: postgresql
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: postgresql
