@@ -23,3 +23,6 @@ spec:
     persistence:
       enabled: true
       existingClaim: pgdb-claim
+    readinessProbe:
+      periodSeconds: 60
+      timeoutSeconds: 60
