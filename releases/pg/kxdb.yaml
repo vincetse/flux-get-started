@@ -1,0 +1,26 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: kxdb
+  namespace: demo
+  annotations:
+    flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: semver:~4.0
+spec:
+  releaseName: kxdb
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: postgresql
+    version: 3.7.1
+  values:
+    image:
+      repository: bitnami/postgresql
+    postgresqlUsername: postgres
+    postgresqlPassword: p0stgre5
+    postgresqlDatabase: mydb
+    persistence:
+      enabled: false
+    readinessProbe:
+      periodSeconds: 60
+      timeoutSeconds: 60
