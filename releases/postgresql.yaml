@@ -22,4 +22,4 @@ spec:
     postgresqlDatabase: mydb
     persistence:
       enabled: true
-    existingClaim: pgdb-claim
+      existingClaim: pgdb-claim
